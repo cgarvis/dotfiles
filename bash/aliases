@@ -1,0 +1,19 @@
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# ls
+alias ls='ls -F'
+alias ll='ls -l'
+alias l='ls -lAh'
+
+# change directory to projects
+function p { cd ~/Projects/$1 }
+
+# MacVim
+alias vi='mvim -v'
+alias vim='mvim -v'
+
+# misc
+alias reload='. ~/.bash_profile'

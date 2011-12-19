@@ -1,0 +1,9 @@
+[user]
+	name = Christopher Garvis
+	email = cgarvis@gmail.com
+
+[merge]
+        tool = opendiff
+
+[color]
+	ui = auto
