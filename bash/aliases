@@ -4,9 +4,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # ls
-alias ls='ls -F'
-alias ll='ls -l'
-alias l='ls -lAh'
+alias ls='ls -FG'
+alias ll='ls -lG'
+alias l='ls -lAhG'
 
 # change directory to projects
 function p { cd ~/Projects/$1 }
