@@ -57,7 +57,14 @@ autocmd filetype ruby set shiftwidth=2 tabstop=2
 
 " PHP Configurations
 """"""""""""""""""""
-autocmd FileType php setlocal colorcolumn=100
+autocmd FileType php setlocal colorcolumn=100 noexpandtab tabstop=2 shiftwidth=2
+
+" Drupal Configurations
+augroup module
+    autocmd BufRead *.inc set filetype=php
+    autocmd BufRead *.module set filetype=php
+    autocmd BufRead *.test set filetype=php
+augroup end
 
 " Coffeescript configurations
 """""""""""""""""""""""""""""
