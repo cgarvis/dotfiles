@@ -53,13 +53,20 @@ nnoremap <c-l> <c-w>l
 
 " Ruby Configurations
 """""""""""""""""""""
-autocmd filetype ruby set shiftwidth=2 tabstop=2
+autocmd Filetype ruby set shiftwidth=2 tabstop=2
+autocmd BufRead Vagrantfile set filetype=ruby
 
 " PHP Configurations
 """"""""""""""""""""
 autocmd FileType php setlocal colorcolumn=100 noexpandtab tabstop=2 shiftwidth=2
+autocmd FileType php noremap <c-p>l :!/usr/bin/php -l %<cr>
+autocmd FileType php setlocal makeprg=php\ -ln\ %
+autocmd FileType php setlocal errorformat=%m\ in\ %f\ on\ line\ %l
+autocmd FileType php setlocal noeol binary fileformats="mac,unix,dos"
+autocmd QuickFixCmdPre make w
 
 " Drupal Configurations
+"""""""""""""""""""""""
 augroup module
     autocmd BufRead *.inc set filetype=php
     autocmd BufRead *.module set filetype=php
@@ -99,8 +106,16 @@ let mapleader=","
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " make switching back to the previous buffer easier
 nnoremap <leader><leader> <c-^>
+
+" easier code folding
+map <leader>f :set foldmethod=indent<cr>zM<cr>
+map <leader>F :set foldmethod=manual<cr>zR<cr>
+
+"insert blank line above or below current line from normal mode
+nnoremap _ :put =''<cr>
+nnoremap - :put! =''<cr>
