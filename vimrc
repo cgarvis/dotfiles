@@ -7,7 +7,8 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 " Colours
-colorscheme ir_black
+set background=dark
+colorscheme solarized
 
 " Basic
 syntax enable
