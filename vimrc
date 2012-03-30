@@ -76,7 +76,7 @@ augroup end
 " Coffeescript configurations
 """""""""""""""""""""""""""""
 au BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
-au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab
+au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab colorcolumn=100
 
 " Javascript configurations
 """""""""""""""""""""""""""
@@ -91,7 +91,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Lets remove that whitespace
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+"nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 autocmd FileType c,cpp,java,php,js,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Fix those pesky situations where you edit & need sudo to save
