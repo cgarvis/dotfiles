@@ -15,7 +15,7 @@ syntax enable
 set number        " always show line numbers
 set hidden
 set backspace=indent,eol,start
-set directory=/tmp// " swap files
+set directory=/tmp// " Keep swap files in one location
 set ffs=unix,dos,mac "Default file types
 set nowrap        " don't wrap lines
 set showmatch     " set show matching parenthesis
