@@ -10,3 +10,6 @@
 [submodule "vim/bundle/vim-smartinput"]
 	path = vim/bundle/vim-smartinput
 	url = git://github.com/kana/vim-smartinput.git
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
