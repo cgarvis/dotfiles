@@ -8,4 +8,4 @@
 [color]
 	ui = auto
 [core]
-	editor = mvim -v
+	editor = vim

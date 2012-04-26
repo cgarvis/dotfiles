@@ -4,16 +4,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # ls
-alias ls='ls -FG'
-alias ll='ls -lG'
-alias l='ls -lAhG'
+alias ls='ls -FG --color'
+alias ll='ls -lG --color'
+alias l='ls -lAhG --color'
 
-# change directory to projects
-function p { cd ~/Projects/$1 }
-
-# MacVim
-alias vi='mvim -v'
-alias vim='mvim -v'
+alias grep='grep --color=auto'
 
 # misc
 alias reload='. ~/.bash_profile'
+alias vi='vim'
