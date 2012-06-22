@@ -5,8 +5,10 @@ call pathogen#helptags()
 set encoding=utf-8
 set nocompatible               " be iMproved
 filetype off                   " required!
+filetype indent on
 
 " Colours
+let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
@@ -54,7 +56,7 @@ nnoremap <c-l> <c-w>l
 
 " Ruby Configurations
 """""""""""""""""""""
-autocmd Filetype ruby set shiftwidth=2 tabstop=2
+autocmd Filetype ruby set colorcolumn=100 shiftwidth=2 tabstop=2
 autocmd BufRead Vagrantfile set filetype=ruby
 
 " PHP Configurations
@@ -83,6 +85,9 @@ au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab colorcolumn=1
 """""""""""""""""""""""""""
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab
 
+" Jade configurations
+au BufNewFile,BufReadPost *.jade setlocal shiftwidth=2 expandtab
+
 " Make sure we hilight extra whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -93,7 +98,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " Lets remove that whitespace
 "nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-autocmd FileType c,cpp,java,php,js,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,js,rb,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Fix those pesky situations where you edit & need sudo to save
 cmap w!! w !sudo tee % >/dev/null
@@ -102,6 +107,7 @@ cmap w!! w !sudo tee % >/dev/null
 """"""""""""""""""""""""""
 " use comma as <Leader> key instead of backslash
 let mapleader=","
+set wildignore=*.o,*.obj,.git,node_modules/**
 
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
