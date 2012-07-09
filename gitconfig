@@ -1,11 +1,14 @@
 [user]
 	name = Christopher Garvis
 	email = cgarvis@gmail.com
-
 [merge]
-        tool = opendiff
-
+	tool = splice
+[mergetool "splice"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
 [color]
 	ui = auto
 [core]
 	editor = vim
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --

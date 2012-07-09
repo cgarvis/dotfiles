@@ -5,6 +5,7 @@ call pathogen#helptags()
 set encoding=utf-8
 set nocompatible               " be iMproved
 filetype off                   " required!
+filetype indent on
 
 " Colours
 set background=dark
@@ -12,23 +13,28 @@ colorscheme solarized
 
 " Basic
 syntax enable
-set number        " always show line numbers
+set relativenumber " show relative line numbers.  Use 'number' if you just want nubmers
 set hidden
 set backspace=indent,eol,start
 set directory=/tmp// " Keep swap files in one location
 set ffs=unix,dos,mac "Default file types
 set nowrap        " don't wrap lines
 set showmatch     " set show matching parenthesis
+nnoremap / /\v
+vnoremap / /\v
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
+nnoremap <leader><space> :noh<cr>
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+
+au FocusLost * :wa " auto save when vim loses focus
 
 " Tabs & spaces
 set tabstop=4     " a tab is four spaces
@@ -52,9 +58,17 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" easier navigation around brackets
+nnoremap <tab> %
+vnoremap <tab> %
+
 " Ruby Configurations
 """""""""""""""""""""
+<<<<<<< HEAD
 autocmd Filetype ruby set shiftwidth=2 tabstop=2 colorcolumn=80
+=======
+autocmd Filetype ruby set colorcolumn=100 shiftwidth=2 tabstop=2
+>>>>>>> de5995630c6039e53b6d87ab0726cb31ec7d6282
 autocmd BufRead Vagrantfile set filetype=ruby
 
 " PHP Configurations
@@ -83,6 +97,9 @@ au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab colorcolumn=1
 """""""""""""""""""""""""""
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab
 
+" Jade configurations
+au BufNewFile,BufReadPost *.jade setlocal shiftwidth=2 expandtab
+
 " Make sure we hilight extra whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -93,7 +110,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " Lets remove that whitespace
 "nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-autocmd FileType c,cpp,java,php,js,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,js,rb,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Fix those pesky situations where you edit & need sudo to save
 cmap w!! w !sudo tee % >/dev/null
@@ -102,6 +119,7 @@ cmap w!! w !sudo tee % >/dev/null
 """"""""""""""""""""""""""
 " use comma as <Leader> key instead of backslash
 let mapleader=","
+set wildignore=*.o,*.obj,.git,node_modules/**
 
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
@@ -119,6 +137,16 @@ nnoremap <leader><leader> <c-^>
 " easier code folding
 map <leader>f :set foldmethod=indent<cr>zM<cr>
 map <leader>F :set foldmethod=manual<cr>zR<cr>
+
+" make switch to normal mode easier
+inoremap jj <ESC>
+
+" center on current line
+nmap <space> zz
+nmap n nzz
+nmap N Nzz
+
+set scrolloff=7
 
 "insert blank line above or below current line from normal mode
 nnoremap _ :put =''<cr>
