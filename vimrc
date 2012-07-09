@@ -8,29 +8,33 @@ filetype off                   " required!
 filetype indent on
 
 " Colours
-let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
 " Basic
 syntax enable
-set number        " always show line numbers
+set relativenumber " show relative line numbers.  Use 'number' if you just want nubmers
 set hidden
 set backspace=indent,eol,start
 set directory=/tmp// " Keep swap files in one location
 set ffs=unix,dos,mac "Default file types
 set nowrap        " don't wrap lines
 set showmatch     " set show matching parenthesis
+nnoremap / /\v
+vnoremap / /\v
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
+nnoremap <leader><space> :noh<cr>
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+
+au FocusLost * :wa " auto save when vim loses focus
 
 " Tabs & spaces
 set tabstop=4     " a tab is four spaces
@@ -53,6 +57,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" easier navigation around brackets
+nnoremap <tab> %
+vnoremap <tab> %
 
 " Ruby Configurations
 """""""""""""""""""""
@@ -122,6 +130,16 @@ nnoremap <leader><leader> <c-^>
 " easier code folding
 map <leader>f :set foldmethod=indent<cr>zM<cr>
 map <leader>F :set foldmethod=manual<cr>zR<cr>
+
+" make switch to normal mode easier
+inoremap jj <ESC>
+
+" center on current line
+nmap <space> zz
+nmap n nzz
+nmap N Nzz
+
+set scrolloff=7
 
 "insert blank line above or below current line from normal mode
 nnoremap _ :put =''<cr>
