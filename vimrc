@@ -54,7 +54,7 @@ nnoremap <c-l> <c-w>l
 
 " Ruby Configurations
 """""""""""""""""""""
-autocmd Filetype ruby set shiftwidth=2 tabstop=2
+autocmd Filetype ruby set shiftwidth=2 tabstop=2 colorcolumn=80
 autocmd BufRead Vagrantfile set filetype=ruby
 
 " PHP Configurations
@@ -109,6 +109,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
+
+" ignores
+set wildignore=*.o,*.obj,.git,node_modules/**,tmp/**
 
 " make switching back to the previous buffer easier
 nnoremap <leader><leader> <c-^>
