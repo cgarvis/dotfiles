@@ -64,11 +64,7 @@ vnoremap <tab> %
 
 " Ruby Configurations
 """""""""""""""""""""
-<<<<<<< HEAD
 autocmd Filetype ruby set shiftwidth=2 tabstop=2 colorcolumn=80
-=======
-autocmd Filetype ruby set colorcolumn=100 shiftwidth=2 tabstop=2
->>>>>>> de5995630c6039e53b6d87ab0726cb31ec7d6282
 autocmd BufRead Vagrantfile set filetype=ruby
 
 " PHP Configurations
