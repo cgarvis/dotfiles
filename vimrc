@@ -87,11 +87,11 @@ augroup end
 " Coffeescript configurations
 """""""""""""""""""""""""""""
 au BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
-au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab colorcolumn=100
+au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab colorcolumn=80
 
 " Javascript configurations
 """""""""""""""""""""""""""
-au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab
+au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab colorcolumn=80
 
 " Jade configurations
 au BufNewFile,BufReadPost *.jade setlocal shiftwidth=2 expandtab
@@ -135,7 +135,6 @@ map <leader>F :set foldmethod=manual<cr>zR<cr>
 inoremap jj <ESC>
 
 " center on current line
-nmap <space> zz
 nmap n nzz
 nmap N Nzz
 
