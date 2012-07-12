@@ -28,3 +28,6 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = https://github.com/sjl/splice.vim.git
+[submodule "vim/bundle/vitality"]
+	path = vim/bundle/vitality
+	url = https://github.com/sjl/vitality.vim.git
