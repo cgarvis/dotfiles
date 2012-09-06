@@ -31,3 +31,9 @@
 [submodule "vim/bundle/vitality"]
 	path = vim/bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
