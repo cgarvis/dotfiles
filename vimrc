@@ -47,6 +47,18 @@ set smarttab      " insert tabs on the start of a line according to
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 
+" Statusline goodness
+"""""""""""""""""""""
+set laststatus=2
+set statusline=%#identifier#
+set statusline+=[%t]    "tail of the filename
+set statusline+=%*
+
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 " General Code Folding
 """"""""""""""""""""""
 set foldmethod=indent
@@ -86,12 +98,13 @@ augroup end
 
 " Coffeescript configurations
 """""""""""""""""""""""""""""
-au BufNewFile,BufReadPost *.coffee setlocal foldmethod=indent
-au BufNewFile,BufReadPost *.coffee setlocal shiftwidth=2 expandtab colorcolumn=80
+autocmd FileType coffee setlocal foldmethod=indent
+autocmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=80
+autocmd BufRead Cakefile set filetype=coffee
 
 " Javascript configurations
 """""""""""""""""""""""""""
-au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 expandtab colorcolumn=80
+au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
 " Jade configurations
 au BufNewFile,BufReadPost *.jade setlocal shiftwidth=2 expandtab
