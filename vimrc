@@ -107,7 +107,12 @@ autocmd BufRead Cakefile set filetype=coffee
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
 " Jade configurations
+"""""""""""""""""""""
 au BufNewFile,BufReadPost *.jade setlocal shiftwidth=2 expandtab
+
+" Make configurations
+"""""""""""""""""""""
+autocmd FileType make setlocal noexpandtab
 
 " Make sure we hilight extra whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
