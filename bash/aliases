@@ -4,9 +4,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # ls
-alias ls='ls -FG --color'
-alias ll='ls -lG --color'
-alias l='ls -lAhG --color'
+alias ls='ls -FG'
+alias ll='ls -lG'
+alias l='ls -lAhG'
 
 alias grep='grep --color=auto'
 
