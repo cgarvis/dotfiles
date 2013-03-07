@@ -1,11 +1,8 @@
 [user]
 	name = Christopher Garvis
 	email = cgarvis@gmail.com
-[merge]
-	tool = vimdiff
-[mergetool "splice"]
-    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-    trustExitCode = true
+[hub]
+    protocol = https
 [color]
 	ui = auto
 [core]
