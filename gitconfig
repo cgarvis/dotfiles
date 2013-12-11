@@ -4,13 +4,17 @@
 [credential]
     helper = /opt/boxen/bin/boxen-git-credential
 [core]
-    excludesfile = /opt/boxen/config/git/gitignore
+	editor = vim
+ excludesfile = /opt/boxen/config/git/gitignore
 [hub]
     protocol = https
 [color]
 	ui = auto
 [core]
 	editor = vim
+ excludesfile = /opt/boxen/config/git/gitignore
 [alias]
     pl = pull --ff-only
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[push]
+	default = simple
