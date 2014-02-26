@@ -8,11 +8,11 @@ filetype off                   " required!
 filetype indent on
 
 " Colours
+syntax enable
 set background=dark
 colorscheme solarized
 
 " Basic
-syntax enable
 set relativenumber " show relative line numbers.  Use 'number' if you just want nubmers
 set hidden
 set backspace=indent,eol,start
@@ -78,6 +78,7 @@ vnoremap <tab> %
 """""""""""""""""""""
 autocmd Filetype ruby set shiftwidth=2 tabstop=2 colorcolumn=80
 autocmd BufRead Vagrantfile set filetype=ruby
+autocmd BufRead *.thor  set filetype=ruby
 
 " PHP Configurations
 """"""""""""""""""""
@@ -129,21 +130,17 @@ autocmd FileType c,cpp,java,php,js,rb,coffee autocmd BufWritePre <buffer> :%s/\s
 " Fix those pesky situations where you edit & need sudo to save
 cmap w!! w !sudo tee % >/dev/null
 
-" Command-T configurations
-""""""""""""""""""""""""""
-" use comma as <Leader> key instead of backslash
 let mapleader=","
-set wildignore=*.o,*.obj,.git,node_modules/**
 
-" double percentage sign in command mode is expanded
-" to directory of current file - http://vimcasts.org/e/14
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-
-map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
+" CtrlP configirations
+"""""""""""""""""""""
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " ignores
-set wildignore=*.o,*.obj,.git,node_modules/**,tmp/**
+set wildignore+=*.o,*.obj,.git,*/node_modules/*,*/tmp/*,*.swp
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/]\.(git|hg|svn|node_modules)$'
+    \ }
 
 " make switching back to the previous buffer easier
 nnoremap <leader><leader> <c-^>

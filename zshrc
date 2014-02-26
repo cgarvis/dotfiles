@@ -9,3 +9,7 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 if [ -f ~/.localrc ]; then
     source ~/.localrc
 fi
+
+if [ -f ~/.go ]; then
+    PATH=$PATH:$HOME/.go/bin
+fi

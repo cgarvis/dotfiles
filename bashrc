@@ -13,6 +13,10 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
+if [ -f ~/.go ]; then
+    PATH=$PATH:$HOME/.go/bin
+fi
+
 # {{{
 # Node Completion - Auto-generated, do not touch.
 shopt -s progcomp

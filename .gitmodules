@@ -34,3 +34,9 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/vim-commentary"]
+    path = vim/bundle/vim-commentary
+    url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
