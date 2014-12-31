@@ -5,6 +5,8 @@
     helper = /opt/boxen/bin/boxen-git-credential
 [core]
 	editor = vim
+	autocrlf = false
+	filemode = false
 [hub]
     protocol = https
 [color]
@@ -13,5 +15,6 @@
     st = status
     pl = pull --ff-only
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    aa = add --all
 [push]
 	default = simple
