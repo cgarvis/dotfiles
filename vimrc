@@ -123,6 +123,17 @@ autocmd FileType make setlocal noexpandtab
 """""""""""""""""""""""
 au BufNewFile,BufReadPost *.pp setlocal shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
+" SASS configurations
+"""""""""""""""""""""
+autocmd BufNewFile,BufRead *.sass setfiletype sass
+autocmd BufNewFile,BufRead *.scss setfiletype sass
+autocmd FileType sass setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=80
+
+" GO configurations
+"""""""""""""""""""
+autocmd FileType go setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=100
+autocmd BufNewFile,BufReadPost *.go set filetype=go
+
 " Make sure we hilight extra whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
