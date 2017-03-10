@@ -5,6 +5,7 @@ source ~/.bash/config
 
 # use .rvm for settings if one exists
 if [ -d ~/.rvm ]; then
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
@@ -13,8 +14,8 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
-if [ -f ~/.go ]; then
-    PATH=$PATH:$HOME/.go/bin
+if [ -z "$GOPATH"]; then
+    PATH=$PATH:$GOPATH/bin
 fi
 
 # {{{

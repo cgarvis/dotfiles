@@ -1,15 +1,27 @@
-ZSH=~/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/cgarvis/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="chrisgarvis"
+
+# Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.my-zsh
-ZSH_THEME=moveline
 
-plugins=(brew cake gem git heroku node npm osx ruby)
+# TMUX configs
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
+plugins=(gem git heroku node npm osx rails ruby sudo tmux web-search)
 
-if [ -f ~/.localrc ]; then
-    source ~/.localrc
-fi
+source $ZSH/oh-my-zsh.sh
 
-if [ -f ~/.go ]; then
-    PATH=$PATH:$HOME/.go/bin
+# User configuration
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
 fi
