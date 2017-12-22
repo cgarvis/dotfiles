@@ -35,5 +35,5 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}) %{$fg[green]%}✔"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[red]%}✗"
 
 # Put it all together!
-PROMPT="$CURRENT_USER_$MACHINE_$LOCAL_
+PROMPT="$CURRENT_USER_$MACHINE_$LOCA_
 %{$fg[white]%}Ѳ%{$reset_color%} "
