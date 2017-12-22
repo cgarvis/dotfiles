@@ -13,15 +13,26 @@ ZSH_CUSTOM=~/.my-zsh
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 
-plugins=(gem git heroku node npm osx rails ruby sudo tmux web-search)
+plugins=(aws debian docker gem git heroku node npm osx pip rails ruby sudo tmux virtualenvwrapper web-search yarn)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+
+# Nicer history
+export HISTSIZE=100000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
+# USe vim as the editor
+export EDITOR='vim'
+
+# Use C-x C-e to edit the current command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+
+# Aliases
+alias c="cd"
+

@@ -1,2 +1,8 @@
-.DS_Store
-vim/.netrwhist
+/.Trash
+/.bash_history
+/.bazaaar
+/.bundle
+/.cache
+/.gem
+*.DS_Store
+*~
