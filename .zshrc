@@ -1,8 +1,5 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/cgarvis/.oh-my-zsh
+export ZSH=/root/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="chrisgarvis"
 
@@ -16,9 +13,6 @@ ZSH_TMUX_AUTOQUIT=false
 plugins=(aws debian docker gem git heroku node npm osx pip rails ruby sudo tmux virtualenvwrapper web-search yarn)
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
 
 # Nicer history
 export HISTSIZE=100000
@@ -35,4 +29,3 @@ bindkey '\C-x\C-e' edit-command-line
 
 # Aliases
 alias c="cd"
-
