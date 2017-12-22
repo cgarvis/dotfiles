@@ -10,7 +10,7 @@ ZSH_CUSTOM=~/.my-zsh
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 
-plugins=(aws debian docker gem git heroku node npm osx pip rails ruby sudo tmux virtualenvwrapper web-search yarn)
+plugins=(aws debian docker gem git heroku node npm osx pip rails ruby sudo tmux web-search yarn)
 
 source $ZSH/oh-my-zsh.sh
 
