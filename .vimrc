@@ -1,12 +1,7 @@
-" Pathogeen Configurations
-call pathogen#infect()
-call pathogen#helptags()
-
 set encoding=utf-8
 set nocompatible               " be iMproved
 filetype off                   " required!
 filetype indent on
-filetype plugin indent on      " Puppet plugin requires this
 
 " Colours
 syntax enable
@@ -34,7 +29,9 @@ set undolevels=1000      " use many muchos levels of undo
 set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+set scrolloff=7          " show lines above or below cursor when scrolling
 set shell=bash
+
 
 au FocusLost * :wa " auto save when vim loses focus
 
@@ -57,9 +54,9 @@ set statusline+=[%t]    "tail of the filename
 set statusline+=%*
 
 " Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 " General Code Folding
 """"""""""""""""""""""
@@ -109,6 +106,7 @@ autocmd BufRead Cakefile set filetype=coffee
 
 " Javascript configurations
 """""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.json setfiletype js
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
 " Jade configurations
@@ -133,6 +131,12 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab co
 """""""""""""""""""
 autocmd FileType go setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=100
 autocmd BufNewFile,BufReadPost *.go set filetype=go
+
+" Terraform configuration
+""""""""""""""""""""""""""
+autocmd FileType tf setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=100
+autocmd BufNewFile,BufReadPost *.tf set filetype=tf
+autocmd BufNewFile,BufReadPost *.tfvars set filetype=tf
 
 " Make sure we hilight extra whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -174,8 +178,6 @@ inoremap jj <ESC>
 " center on current line
 nmap n nzz
 nmap N Nzz
-
-set scrolloff=7
 
 "insert blank line above or below current line from normal mode
 nnoremap _ :put =''<cr>
@@ -234,7 +236,7 @@ function! RunTests(filename)
         " Fall back to the .test-commands pipe if available, assuming someone
         " is reading the other side and running the commands
         elseif filewritable(".test-commands")
-          let cmd = 'rspec --color --format progress --require "~/lib/vim_rspec_formatter" --format VimFormatter --out tmp/quickfix'
+          let cmd = 'rspec --color --format progress --require "~/.vim/rspec_formatter" --format VimFormatter --out tmp/quickfix'
           exec ":!echo " . cmd . " " . a:filename . " > .test-commands"
 
           " Write an empty string to block until the command completes
