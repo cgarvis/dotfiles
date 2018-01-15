@@ -9,11 +9,14 @@
     autocrlf = false
     filemode = false
 [alias]
-    st = status
+    a = add
+    aa = add --all
+    amend = commit --amend
     di = diff
     dc = diff --cached
-    amend = commit --amend
-    aa = add --all
     ff = merger --ff-only
-    pl = pull --ff-only
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    p = push
+    pl = pull --ff-only
+    pr = pull --rebase
+    st = status
