@@ -203,7 +203,7 @@ function! RunTestFile(...)
     endif
 
     " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
+    let in_test_file = match(expand("%"), '\(.feature\|.test.js\|_spec.rb\)$') != -1
     if in_test_file
         call SetTestFile()
     elseif !exists("t:grb_test_file")
@@ -246,6 +246,8 @@ function! RunTests(filename)
         " Fall back to a blocking test run with Bundler
         elseif filereadable("Gemfile")
             exec ":!rspec --color " . a:filename
+        elseif filereadable("package.json")
+            exec ":!npm test " . a:filename
         " Fall back to a normal blocking test run
         else
             exec ":!rspec --color " . a:filename
