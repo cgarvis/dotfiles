@@ -14,6 +14,12 @@ plugins=(aws debian docker gem git heroku node npm osx pip rails ruby sudo tmux 
 
 source $ZSH/oh-my-zsh.sh
 
+# Following line enables command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Following line displays red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
 # Nicer history
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
