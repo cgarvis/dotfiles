@@ -6,6 +6,7 @@ filetype indent on
 " Colours
 syntax enable
 set background=dark
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Basic
@@ -137,6 +138,12 @@ autocmd BufNewFile,BufReadPost *.go set filetype=go
 autocmd FileType tf setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=100
 autocmd BufNewFile,BufReadPost *.tf set filetype=tf
 autocmd BufNewFile,BufReadPost *.tfvars set filetype=tf
+
+" YAML configuration
+""""""""""""""""""""""""""
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab colorcolumn=100
+autocmd BufNewFile,BufReadPost *.yml set filetype=yaml
+autocmd BufNewFile,BufReadPost *.yaml set filetype=yaml
 
 " Make sure we hilight extra whitespace in the most annoying way possible.
 highlight ExtraWhitespace ctermbg=red guibg=red
