@@ -7,11 +7,14 @@
 /.cache
 /.docker
 /.gem
+/.history
+/.now
 /.npm
 /.ssh
 /.terraform.d
 /.up
 /.zsh_history
+/.viminfo
 *.DS_Store
 *~
 
