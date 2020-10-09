@@ -74,6 +74,11 @@ nnoremap <c-l> <c-w>l
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Elixir Configurations
+"""""""""""""""""""""""
+autocmd Filetype elixir set shiftwidth=2 tabstop=2 colorcolumn=80
+autocmd BufRead *.eex set filetype=elixir
+
 " Ruby Configurations
 """""""""""""""""""""
 autocmd Filetype ruby set shiftwidth=2 tabstop=2 colorcolumn=80
@@ -108,6 +113,7 @@ autocmd BufRead Cakefile set filetype=coffee
 " Javascript configurations
 """""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.json setfiletype js
+autocmd BufNewFile,BufRead *.tsx setfiletype js
 au BufNewFile,BufReadPost *.js setlocal shiftwidth=2 tabstop=2 expandtab colorcolumn=80
 
 " Jade configurations
@@ -169,8 +175,10 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " ignores
 set wildignore+=*.o,*.obj,.git,*/node_modules/*,*/tmp/*,*.swp
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/]\.(git|hg|svn|node_modules)$'
+    \ 'dir': '\v[\/]\.(git|hg|svn|node_modules|dep)$'
     \ }
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " make switching back to the previous buffer easier
 nnoremap <leader><leader> <c-^>
