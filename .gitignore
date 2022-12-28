@@ -15,6 +15,7 @@
 /.up
 /.zsh_history
 /.viminfo
+.*
 *.DS_Store
 *~
 
@@ -29,4 +30,6 @@
 /Music
 /Pictures
 /Public
+/Screenshots
 /projects
+/workspaces

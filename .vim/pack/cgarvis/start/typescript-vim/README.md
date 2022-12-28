@@ -3,7 +3,7 @@ Typescript Syntax for Vim
 
 Syntax file and other settings for [TypeScript](http://typescriptlang.org). The
 syntax file is taken from this [blog
-post](http://blogs.msdn.com/b/interoperability/archive/2012/10/01/sublime-text-vi-emacs-typescript-enabled.aspx).
+post](https://docs.microsoft.com/en-us/archive/blogs/interoperability/sublime-text-vi-emacs-typescript-enabled).
 
 Checkout [Tsuquyomi](https://github.com/Quramy/tsuquyomi) for omni-completion
 and other features for TypeScript editing.
@@ -11,9 +11,14 @@ and other features for TypeScript editing.
 Install
 -------
 
-From Vim 8 onward, the plugin can be installed as simply as:
+From Vim 8 onward, the plugin can be installed as simply as (Unix/Mac):
 ```
 git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/pack/typescript/start/typescript-vim
+```
+
+On Windows/Powershell, use the following:
+```
+git clone https://github.com/leafgarland/typescript-vim.git $home/vimfiles/pack/typescript/start/typescript-vim
 ```
 
 For older versions of Vim, the simplest way to install is via a Vim add-in manager such as

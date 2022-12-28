@@ -20,3 +20,14 @@
     pl = pull --ff-only
     pr = pull --rebase
     st = status
+    fuck = "!git add -A && git commit --fixup HEAD && git rebase --autosquash -i HEAD~2"
+    
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main
+[rebase]
+    autosquash = true

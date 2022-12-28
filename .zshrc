@@ -1,4 +1,7 @@
-export ZSH=/root/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+
+ # If you come from bash you might have to change your $PATH.
+ export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="chrisgarvis"
@@ -10,7 +13,7 @@ ZSH_CUSTOM=~/.my-zsh
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 
-plugins=(aws debian docker gem git heroku node npm osx pip rails ruby sudo tmux web-search yarn)
+plugins=(aws debian docker gem git heroku macos node npm pip rails ruby sudo tmux web-search yarn zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,3 +38,7 @@ bindkey '\C-x\C-e' edit-command-line
 
 # Aliases
 alias c="cd"
+alias vi="nvim"
+alias vim="nvim"
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

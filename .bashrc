@@ -13,6 +13,10 @@ if [ -z "$GOPATH"]; then
     PATH=$PATH:$GOPATH/bin
 fi
 
+if [ -f ~/.mix/escripts ]; then
+    PATH=$PATH:.mix/escripts
+fi
+
 # {{{
 # Node Completion - Auto-generated, do not touch.
 shopt -s progcomp
@@ -21,3 +25,6 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
