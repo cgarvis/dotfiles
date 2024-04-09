@@ -44,12 +44,14 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
+  use({ "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }})
+
   -- themes
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use {'nyoom-engineering/oxocarbon.nvim'}
+  -- use {'nyoom-engineering/oxocarbon.nvim'}
 
   use 'shaunsingh/nord.nvim'
 end)

@@ -100,7 +100,9 @@ nvim_lsp.astro.setup {
   capabilities = capabilities
 }
 
-local path_to_elixirls = vim.fn.expand("~/.cache/nvim/lspconfig/elixirls/elixir-ls/release/language_server.sh")
+
+local path_to_elixirls = vim .fn.expand("/opt/homebrew/bin/elixir-ls")
+--local path_to_elixirls = vim.fn.expand("~/.cache/nvim/lspconfig/elixirls/elixir-ls/release/language_server.sh")
 
 nvim_lsp.elixirls.setup({
   cmd = {path_to_elixirls},
