@@ -99,6 +99,16 @@ _G.packer_plugins = {
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["diagflow.nvim"] = {
+    loaded = true,
+    path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/diagflow.nvim",
+    url = "https://github.com/dgagn/diagflow.nvim"
+  },
+  ["elixir-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/elixir-tools.nvim",
+    url = "https://github.com/elixir-tools/elixir-tools.nvim"
+  },
   ["git.nvim"] = {
     loaded = true,
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/git.nvim",
@@ -133,11 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -179,11 +184,6 @@ _G.packer_plugins = {
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["oxocarbon.nvim"] = {
-    loaded = true,
-    path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
-    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -199,10 +199,20 @@ _G.packer_plugins = {
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/cgarvis/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   },
   ["zen-mode.nvim"] = {
     loaded = true,

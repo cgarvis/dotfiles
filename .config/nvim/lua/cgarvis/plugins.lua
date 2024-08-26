@@ -9,6 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'dgagn/diagflow.nvim' -- Diagnostics overlay
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -17,11 +18,11 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip' -- used in cmp snippet expand
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  -- use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'nvim-telescope/telescope.nvim'
   use 'folke/trouble.nvim'
-
+  use 'folke/which-key.nvim'
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -38,20 +39,37 @@ packer.startup(function(use)
   use 'folke/zen-mode.nvim'
 
   use 'akinsho/nvim-bufferline.lua'
-  use 'github/copilot.vim'
-
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
-  use({ "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" }})
+  use {
+    "elixir-tools/elixir-tools.nvim",
+    tag = "stable",
+    requires = { "nvim-lua/plenary.nvim" }
+  }
+
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      -- test runners: https://github.com/nvim-neotest/neotest?tab=readme-ov-file#supported-runners
+      "jfpedroza/neotest-elixir"
+    }
+  }
 
   -- themes
+  use 'folke/tokyonight.nvim'
+  use 'shaunsingh/nord.nvim'
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
   -- use {'nyoom-engineering/oxocarbon.nvim'}
 
-  use 'shaunsingh/nord.nvim'
+  -- ai agents
+  use 'github/copilot.vim'
 end)

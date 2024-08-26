@@ -7,6 +7,10 @@ vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
 
 
 trouble.setup {
-  auto_open = true,
-  auto_close = true,
+  modes = {
+    diagnostics = {
+      auto_open = true,
+      auto_close = true,
+    },
+  }
 }
